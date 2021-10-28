@@ -1,0 +1,292 @@
+html {
+    background: rgb(235, 97, 35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px black;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.navigation-container {
+    color: rgb(23, 22, 21);
+    height: 100vh;
+    display: inline-block
+}
+
+main{
+    color: whitesmoke;
+    height: 100vh;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    ""
+    ;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 10vw);
+    gap: 10px;
+}
+
+.gallery_image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    outline-offset: 0.1rem;
+    transition: 0.5s ease-in-out;
+}
+
+.gallery_image:hover {
+    outline: 2rem solid rgba(240, 221, 221, 0.26);
+    transform: scale(1.1);
+}
+
+nav {
+    background-color: rgb(245, 205, 8);
+    grid-area: nav;
+    text-align: center;
+    padding: var(--main-padding);
+    width: 100%;
+}
+
+.navigation {
+    display: grid;
+    font-size: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.navigation span {
+    display: inline-block;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.image1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.image2 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.image3 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.image4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.image5 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.image6 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+/* Bonus */
+html:hover .spider {
+    top: -120%;
+}
+
+.spider {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 30%;
+
+    /* 4. Animatie */
+    animation: swing 4s infinite;
+    transform-origin: top;
+
+    /* Bonus */
+    transition: 2s ease-in-out;
+}
+
+.spider .spiderweb {
+    width: 2px;
+    height: 200px;
+    margin-left: 49px;
+    background: rgba(255,255,255, .7);
+}
+
+.spider .body {
+    width: 100px;
+    height: 80px;
+    background: #000;
+    position: relative;
+    border-radius: 50%;
+}
+
+.spider .body .eye {
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    bottom: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.spider .body .eye.left {
+    left: 15px;
+}
+
+.spider .body .eye.right {
+    right: 15px;
+}
+
+.spider .body .eye:after {
+    background: #000;
+    width: 7px;
+    height: 7px;
+    content: '';
+    display: block;
+    margin: 55%;
+    border-radius: 50%;
+
+    /* 3. Animatie */
+    animation: look 8s infinite;
+}
+
+.spider .legs .leg {
+    width: 80px;
+    height: 40px;
+    margin-top: -20px;
+    border: 5px solid transparent;
+    border-top-color: #000;
+    border-radius: 40px 40px 0 0;
+}
+
+.spider .legs {
+    position: absolute;
+    bottom: -10%;
+    z-index: -1;
+}
+
+.spider .legs.left {
+    left: -70%;
+}
+.spider .legs.right {
+    right: -60%;
+}
+
+.legs.left .leg:nth-child(1){
+    transform: rotate(10deg);
+    margin-left: 10px;
+}
+.legs.right .leg:nth-child(1){
+    transform: rotate(-10deg);
+    margin-left: -10px;
+}
+
+.legs.left .leg:nth-child(2){
+    transform: rotate(-20deg);
+    margin-left: 20px;
+}
+.legs.right .leg:nth-child(2){
+    transform: rotate(20deg);
+    margin-left: -20px;
+}
+
+.legs.left .leg:nth-child(3){
+    transform: rotate(-50deg);
+    margin-left: 30px;
+}
+.legs.right .leg:nth-child(3){
+    transform: rotate(50deg);
+    margin-left: -30px;
+}
+
+/* 1. Animatie */
+@keyframes look {
+    0%, 40%, 100% {
+        transform: translateX(0); 
+    }
+
+    45%, 95% {
+        transform: translateX(-110%);
+    }
+}
+
+
+/* 3. Animatie */
+@keyframes swing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation-container{
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        ""
+        ;
+    }
+
+    .navigation {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation-container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+        ""
+        ;
+    }
+    
+    .navigation {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
