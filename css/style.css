@@ -12,14 +12,15 @@ html {
 .container {
     width: 50%;
     margin: 0 auto;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .navigation-container {
     color: rgb(23, 22, 21);
     height: 100vh;
-    display: inline-block
+    display: inline-block;
+    object-position: center;
 }
 
 main{
@@ -30,8 +31,7 @@ main{
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
-    """"""
-    ;
+    """""";
     text-align: center;
     text-transform: uppercase;
 }
@@ -71,6 +71,7 @@ nav {
 }
 
 .navigation {
+    text-align: center;
     display: grid;
     font-size: 2rem;
     grid-template-columns: repeat(4, 1fr);
