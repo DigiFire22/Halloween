@@ -26,6 +26,12 @@ html {
 
 main{
     color: whitesmoke;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.main-teenused{
+    object-position: center;
     height: 100vh;
     display: grid;
     gap: 5px;
@@ -33,12 +39,6 @@ main{
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
     """""";
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.main-teenused{
-    object-position: center;
 }
 
 .gallery {
