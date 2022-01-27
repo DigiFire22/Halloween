@@ -32,7 +32,7 @@ main{
 
 .main-teenused{
     object-position: center;
-    height: 100vh;
+    height: 10vh;
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(1, 1fr);
